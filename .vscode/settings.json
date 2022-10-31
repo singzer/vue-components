@@ -1,0 +1,34 @@
+{
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    // "editor.codeActionsOnSave": {
+    //   "source.fixAll.eslint": true
+    // },
+    "minapp-vscode.prettier": {
+        "parser": "html",
+        "useTabs": false,
+        "tabWidth": 2,
+        "printWidth": 100,
+        "singleQuote": false
+        // 自动格式化
+        // "formatOnSave": true
+    },
+    "[vue]": {
+        "editor.defaultFormatter": "Vue.volar"
+        // "editor.formatOnSave": true
+    },
+    "[typescript]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[vue-html]": {
+        "editor.formatOnSave": true
+    },
+    "[go]": {
+        "editor.defaultFormatter": "golang.go"
+    },
+    "window.zoomLevel": 2,
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    }
+}
