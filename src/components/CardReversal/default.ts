@@ -1,4 +1,4 @@
-import { ContainerCfg, PicCfg, ImgCfg, LoginContentCfg, InputCfg } from "./types";
+import { ContainerCfg, PicCfg, ImgCfg, LoginContentCfg, InputCfg, LoginForm } from "./types";
 
 export const containerDt: ContainerCfg = {
     left: '50%',
@@ -56,4 +56,9 @@ export const inputDt: InputCfg = {
     padding: '0.8rem 0.8rem 0.8rem 3rem',
     borderRadius: '15px',
     margin: '5px'
+}
+
+export const loginForm: LoginForm = {
+    username: '',
+    password: ''
 }

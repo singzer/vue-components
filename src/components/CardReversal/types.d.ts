@@ -36,3 +36,8 @@ export interface InputCfg {
     borderRadius?: string
     margin?: string
 }
+
+export interface LoginForm {
+    username?: string
+    password?: string
+}

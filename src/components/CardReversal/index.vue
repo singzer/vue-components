@@ -24,12 +24,10 @@ const {
     goLoginUp: () => void,
     goLogin: () => void
 }>()
-const test = () => {
-    console.log('test', inputCfg)
-}
+
 </script>
 <template>
-    <div class="container" @click.stop="test">
+    <div class="container">
         <div class="box login" :class="{ 'login-reversal': isReversal }">
             <slot name="login">
                 <div class="form-content">
