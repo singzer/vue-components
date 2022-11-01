@@ -3,17 +3,29 @@ export interface BoxCfg {
     backgroundColor?: string
 }
 
-/**
- * width: 20px;
-    height: 20px;
-    border-radius: 20px;
-    margin-right: 10px;
-    background-color: white;
- */
+
 export interface LiCfg {
     width?: string
     height?: string
     borderRadius?: string
     margin?: string
     backgroundColor?: string
+}
+
+/**
+ * height: 60px;
+        transform: translateY(-30px);
+
+        height: 20px;
+        transform: translateY(0);
+ */
+export interface LoveCfg {
+    start: {
+        height?: string
+        transform?: string
+    }
+    end: {
+        height?: string
+        transform?: string
+    }
 }

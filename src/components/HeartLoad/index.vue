@@ -1,8 +1,28 @@
 <script setup lang='ts'>
-import { boxDt } from './default'
-import { BoxCfg } from './types';
-const { boxCfg = boxDt } = defineProps<{
-    boxCfg?: BoxCfg
+import { boxDt, liDt, love1Dt, love2Dt, love3Dt, love4Dt, love5Dt, liColorDt, animationDelayDt } from './default'
+import { BoxCfg, LiCfg, LoveCfg } from './types';
+const {
+    boxCfg = boxDt,
+    liCfg = liDt,
+    animationTime = '4s',
+    love1Cfg = love1Dt,
+    love2Cfg = love2Dt,
+    love3Cfg = love3Dt,
+    love4Cfg = love4Dt,
+    love5Cfg = love5Dt,
+    liColorCfg = liColorDt,
+    animationDelayCfg = animationDelayDt
+} = defineProps<{
+    boxCfg?: BoxCfg,
+    liCfg?: LiCfg,
+    animationTime?: string,
+    love1Cfg?: LoveCfg,
+    love2Cfg?: LoveCfg,
+    love3Cfg?: LoveCfg,
+    love4Cfg?: LoveCfg,
+    love5Cfg?: LoveCfg,
+    liColorCfg?: string[],
+    animationDelayCfg?: string[]
 }>()
 </script>
 <template>
@@ -36,78 +56,79 @@ ul {
 
 li {
     float: left;
-    width: 20px;
-    height: 20px;
-    border-radius: 20px;
-    margin-right: 10px;
-    background-color: white;
+    width: v-bind('liCfg.width');
+    height: v-bind('liCfg.height');
+    border-radius: v-bind('liCfg.borderRadius');
+    margin: v-bind('liCfg.margin');
+    background-color: v-bind('liCfg.backgroundColor');
 }
 
 li:nth-child(1) {
-    background-color: #f62e74;
-    animation: love1 4s infinite;
+    background-color: v-bind('liColorCfg[0]');
+    animation: love1 v-bind('animationTime') infinite;
+    animation-delay: v-bind('animationDelayCfg[0]');
 }
 
 li:nth-child(2) {
-    background-color: #2ef63f;
-    animation: love2 4s infinite;
-    animation-delay: 0.15s;
+    background-color: v-bind('liColorCfg[1]');
+    animation: love2 v-bind('animationTime') infinite;
+    animation-delay: v-bind('animationDelayCfg[1]');
 }
 
 li:nth-child(3) {
-    background-color: #e2f62e;
-    animation: love3 4s infinite;
-    animation-delay: 0.30s;
+    background-color: v-bind('liColorCfg[2]');
+    animation: love3 v-bind('animationTime') infinite;
+    animation-delay: v-bind('animationDelayCfg[2]');
 }
 
 li:nth-child(4) {
-    background-color: #4e0fb4;
-    animation: love4 4s infinite;
-    animation-delay: 0.45s;
+    background-color: v-bind('liColorCfg[3]');
+    animation: love4 v-bind('animationTime') infinite;
+    animation-delay: v-bind('animationDelayCfg[3]');
 }
 
 li:nth-child(5) {
-    background-color: #77cadf;
-    animation: love5 4s infinite;
-    animation-delay: 0.60s;
+    background-color: v-bind('liColorCfg[4]');
+    animation: love5 v-bind('animationTime') infinite;
+    animation-delay: v-bind('animationDelayCfg[4]');
 }
 
 li:nth-child(6) {
-    background-color: #e2c0e2;
-    animation: love4 4s infinite;
-    animation-delay: 0.75s;
+    background-color: v-bind('liColorCfg[5]');
+    animation: love4 v-bind('animationTime') infinite;
+    animation-delay: v-bind('animationDelayCfg[5]');
 }
 
 li:nth-child(7) {
-    background-color: #a83609a1;
-    animation: love3 4s infinite;
-    animation-delay: 0.90s;
+    background-color: v-bind('liColorCfg[6]');
+    animation: love3 v-bind('animationTime') infinite;
+    animation-delay: v-bind('animationDelayCfg[6]');
 }
 
 li:nth-child(8) {
-    background-color: #750863;
-    animation: love2 4s infinite;
-    animation-delay: 1.05s;
+    background-color: v-bind('liColorCfg[7]');
+    animation: love2 v-bind('animationTime') infinite;
+    animation-delay: v-bind('animationDelayCfg[7]');
 }
 
 li:nth-child(9) {
-    background-color: #e70f0f;
-    animation: love1 4s infinite;
-    animation-delay: 1.20s;
+    background-color: v-bind('liColorCfg[8]');
+    animation: love1 v-bind('animationTime') infinite;
+    animation-delay: v-bind('animationDelayCfg[8]');
 }
 
 @keyframes love1 {
 
     30%,
     50% {
-        height: 60px;
-        transform: translateY(-30px);
+        height: v-bind('love1Cfg.start.height');
+        transform: v-bind('love1Cfg.start.transform');
     }
 
     75%,
     100% {
-        height: 20px;
-        transform: translateY(0);
+        height: v-bind('love1Cfg.end.height');
+        transform: v-bind('love1Cfg.end.transform');
     }
 }
 
@@ -115,14 +136,14 @@ li:nth-child(9) {
 
     30%,
     50% {
-        height: 125px;
-        transform: translateY(-62.5px);
+        height: v-bind('love2Cfg.start.height');
+        transform: v-bind('love2Cfg.start.transform');
     }
 
     75%,
     100% {
-        height: 20px;
-        transform: translateY(0);
+        height: v-bind('love2Cfg.end.height');
+        transform: v-bind('love2Cfg.end.transform');
     }
 }
 
@@ -130,14 +151,14 @@ li:nth-child(9) {
 
     30%,
     50% {
-        height: 160px;
-        transform: translateY(-75px);
+        height: v-bind('love3Cfg.start.height');
+        transform: v-bind('love3Cfg.start.transform');
     }
 
     75%,
     100% {
-        height: 20px;
-        transform: translateY(0);
+        height: v-bind('love3Cfg.end.height');
+        transform: v-bind('love3Cfg.end.transform');
     }
 }
 
@@ -145,14 +166,14 @@ li:nth-child(9) {
 
     30%,
     50% {
-        height: 180px;
-        transform: translateY(-60px);
+        height: v-bind('love4Cfg.start.height');
+        transform: v-bind('love4Cfg.start.transform');
     }
 
     75%,
     100% {
-        height: 20px;
-        transform: translateY(0);
+        height: v-bind('love4Cfg.end.height');
+        transform: v-bind('love4Cfg.end.transform');
     }
 }
 
@@ -160,14 +181,14 @@ li:nth-child(9) {
 
     30%,
     50% {
-        height: 190px;
-        transform: translateY(-45px);
+        height: v-bind('love5Cfg.start.height');
+        transform: v-bind('love5Cfg.start.transform');
     }
 
     75%,
     100% {
-        height: 20px;
-        transform: translateY(0);
+        height: v-bind('love5Cfg.end.height');
+        transform: v-bind('love5Cfg.end.transform');
     }
 }
 </style>
