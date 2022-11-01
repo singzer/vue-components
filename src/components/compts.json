@@ -2,5 +2,9 @@
     {
         "name": "卡片反转",
         "component": "CardReversal"
+    },
+    {
+        "name": "心形加载",
+        "component": "HeartLoad"
     }
 ]
