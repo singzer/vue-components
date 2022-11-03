@@ -6,5 +6,13 @@
     {
         "name": "心形加载",
         "component": "HeartLoad"
+    },
+    {
+        "name": "水杯加载",
+        "component": "WaterWave"
+    },
+    {
+        "name": "导航栏",
+        "component": "NavigationBar"
     }
 ]
