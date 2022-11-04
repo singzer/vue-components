@@ -9,6 +9,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     CardReversal: typeof import('./components/CardReversal/index.vue')['default']
     HeartLoad: typeof import('./components/HeartLoad/index.vue')['default']
+    NavigationBar: typeof import('./components/NavigationBar/index.vue')['default']
     WaterWave: typeof import('./components/WaterWave/index.vue')['default']
   }
 }
